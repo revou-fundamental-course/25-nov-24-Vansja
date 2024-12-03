@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Kalkulator BMI</title>
+</head>
+<body>
+
+
+
+<h1>Kalkulator BMI</h1>
+<p class="highlighted-text">
+    Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di kalkulator BMI.
+</p>
+<div class="bmi-form">
+    <form id="bmiForm">
+        <div class="gender">
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male" class="gender-label" id="male">
+                <img src="https://www.pngarts.com/files/18/Gender-Symbol-Male-PNG-Pic.png" alt="Pria" class="gender-logo"> Pria
+            </label>
+
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female" class="gender-label" id="female">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/017/178/227/small/female-symbol-isolated-icon-on-transparent-background-free-png.png" alt="Wanita" class="gender-logo"> Wanita
+            </label>
+        </div>
+
+        <label for="age">Umur:</label>
+<input type="number" id="age" class="form-input" required min="1" oninput="validatePositiveInput(this)">
+
+<label for="height">Tinggi (cm):</label>
+<input type="number" id="height" class="form-input" required min="1" oninput="validatePositiveInput(this)">
+
+<label for="weight">Berat (kg):</label>
+<input type="number" id="weight" class="form-input" required min="1" oninput="validatePositiveInput(this)">
+
+
+
+        
+        <button type="button" id="calculateButton" onclick="calculateBMI()" disabled>Hitung BMI</button>
+<button type="button" id="resetButton" onclick="resetBMI()" disabled>Reset</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<!-- Kotak Hasil -->
+<div id="resultBox" style="display:none;">
+    <h3><b>Hasil BMI:</b> <span id="bmiValue">0</span></h3>
+    <p>Status: <span id="status"></span></p>
+    <p id="statusExplanation"></p>
+<br>
+  <div id="penjelasanBMI" style="display:none;">
+    <h3>Penjelasan BMI:</h3>
+    <p id="penjelasan-text"></p>
+</div>
+  <br>
+    <h4>Status BMI</h4>
+    <table>
+    <tr>
+        <th>Status</th>
+        <th>Angka BMI</th>
+        <th>Hasil</th>
+    </tr>
+    <tr>
+        <td>Kurus</td>
+        <td>16-18.4</td>
+        <td id="resultKurus">-</td>
+    </tr>
+    <tr>
+        <td>Normal</td>
+        <td>18.5-24.9</td>
+        <td id="resultNormal">-</td>
+    </tr>
+    <tr>
+        <td>Gemuk</td>
+        <td>25-29.9</td>
+        <td id="resultGemuk">-</td>
+    </tr>
+    <tr>
+        <td>Obesitas</td>
+        <td>30+</td>
+        <td id="resultObesitas">-</td>
+    </tr>
+</table>
+  <br>
+  <div class="bmi-diagram">
+    <div class="needle" id="needle"></div>
+    <div class="zones">
+        <span class="zone zone-kurus">Kurus</span>
+        <span class="zone zone-normal">Normal</span>
+        <span class="zone zone-gemuk">Gemuk</span>
+        <span class="zone zone-obesitas">Obesitas</span>
+    </div>
+</div>
+  
+<a href="bmi-guide.pdf" download="Panduan_BMI.pdf" id="downloadButton">
+  <button type="button">Download PDF</button>
+</a>
+
+
+
+</div>
+  
+  <br>
+  
+  <div class="tabs">
+  <div class="tab" onclick="toggleDescription(this)">
+    <div class="tab-header">
+      <span class="tab-title">Keungulan Fitur</span>
+      <span class="toggle-sign">+</span>
+    </div>
+    <div class="tab-description">
+      <ol>
+            <li>menurunkan berat badan</li>
+            <li>Menentukan kategori berat badan ideal atau tidak</li>
+            <li>Mempersiapkan program penurunan berat badan</li>
+            <p>Kalkulator ini hanya boleh digunakan oleh orang dewasa (wanita hamil atau menyusui tidak boleh mengandalkan pembacaan BMI ini) dan tidak ada tindakan yang harus diambil berdasarkan nilainya selain berkonsultasi dengan orang yang memenuhi syarat seperti dokter.</p>
+            <p>Kalkulator akan memberi Anda gambaran tentang perbandingan berat badan Anda dengan nilai umum. Indeks Massa Tubuh (atau BMI) dihitung sebagai berat badan Anda (dalam kilogram) dibagi dengan kuadrat tinggi badan Anda (dalam meter) atau BMI = Kg/M2.</p>
+        </ol>
+    </div>
+  </div>
+  
+  <div class="tab" onclick="toggleDescription(this)">
+    <div class="tab-header">
+      <span class="tab-title">Saran Berdasarkan Kategori BMI</span>
+      <span class="toggle-sign">+</span>
+    </div>
+    <div class="tab-description">
+       <ol>
+        <li><strong>Kurus (BMI < 18,5)</strong>
+            <ul>
+            <li><strong>Saran:</strong> Tingkatkan asupan kalori dengan makanan bergizi. Fokus pada protein, lemak sehat, dan karbohidrat kompleks. Cobalah untuk makan lebih sering dalam porsi kecil dan pertimbangkan konsultasi dengan ahli gizi untuk meningkatkan berat badan secara sehat.</li>
+              <br>
+            </ul>
+        </li>
+        <li><strong>Normal (BMI 18,5 - 24,9)</strong>
+          <br>
+            <ul>
+            <li><strong>Saran:</strong> Pertahankan gaya hidup sehat. Lanjutkan pola makan seimbang dan rutin berolahraga. Pastikan cukup tidur dan kelola stres untuk menjaga kesehatan secara keseluruhan.</li>
+            </ul>
+        </li>
+         <br>
+        <li><strong>Gemuk (BMI 25 - 29,9)</strong>
+            <ul>
+            <li><strong>Saran:</strong> Kurangi asupan kalori dan pilih makanan rendah lemak serta tinggi serat seperti buah, sayur, dan gandum utuh. Olahraga teratur seperti jogging atau bersepeda sangat membantu untuk menurunkan berat badan.</li>
+            </ul>
+        </li>
+         <br
+        <li><strong>Obesitas (BMI ≥ 30)</strong>
+            <ul>
+            <li><strong>Saran:</strong> Menurunkan berat badan secara bertahap dengan pola makan rendah kalori dan olahraga yang teratur adalah langkah penting. Pertimbangkan untuk berkonsultasi dengan ahli gizi atau dokter, terutama untuk menentukan pola makan yang tepat dan aman.</li>
+            </ul>
+        </li>
+    </ol>
+    <p>BMI adalah alat yang berguna, tetapi tidak mempertimbangkan komposisi tubuh seperti massa otot.</p>
+
+    </div>
+  </div>
+
+  <div class="tab" onclick="toggleDescription(this)">
+    <div class="tab-header">
+      <span class="tab-title">Rumus Indeks Massa Tubuh (BMI)</span>
+      <span class="toggle-sign">+</span>
+    </div>
+
+    <div class="tab-description">
+       <h1>Rumus Indeks Massa Tubuh (BMI)r</h1>
+      <br>
+        <p>BMI (Body Mass Index) atau Indeks Massa Tubuh (IMT) adalah pengukuran sederhana untuk menentukan apakah berat badan seseorang sesuai dengan tinggi badannya. BMI dihitung dengan rumus:</p>
+        <p>
+            <strong>BMI</strong> = 
+            <span>Berat Badan (kg)</span> / 
+            <span>Tinggi (m)<sup>2</sup></span>
+        </p>
+        <p>Hasil BMI bisa diklasifikasikan ke dalam beberapa kategori:</p>
+        <ol>
+            <li>Kurus: BMI < 18,5</li>
+            <li>Normal: BMI 18,5 - 24,9</li>
+            <li>Gemuk: BMI 25 - 29,9</li>
+            <li>Obesitas: BMI ≥ 30</li>
+        </ol>
+        <h1>Cara Menghitung BMI</h1>
+        <p>Misalnya, seseorang dengan berat badan 70 kg dan tinggi 1,75 m memiliki BMI:</p>
+        <h2>Contoh Perhitungan BMI</h2>
+        <p><strong>Rumus:</strong> BMI = Berat Badan (kg) / Tinggi (m)<sup>2</sup></p>
+        <p><strong>Contoh:</strong></p>
+         <p>Jika berat badan = 70 kg dan tinggi badan = 1,75 m, maka:</p>
+    <p>
+        BMI = 70 / (1,75<sup>2</sup>) = 70 / 3,06 ≈ 22,9
+    </p>
+    <p>Dengan nilai 22,9, orang tersebut berada dalam kategori "Normal."</p>
+
+    </div>
+  </div>
+</div>
+  <br>
+  
+  <div class="bmi-consultation">
+    <p>BMI tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan resiko penyakit seseorang. Anda perlu konsultasi lebih lanjut mengenai resiko dan kekhawatiran Anda terkait dengan berat badan Anda.</p>
+    <div class="consultation-buttons">
+        <button class="btn" id="consultationBtn">Konsultasi Gizi via Aplikasi</button>
+        <button class="btn" id="registrationBtn">Registrasi Ahli Gizi</button>
+    </div>
+</div>
+
+  
+  <br>
+
+  <footer class="footer">
+    <p>RevoU Fundamental Course - Made by Vanness Jason</p>
+    <div class="download-links">
+        <a href="https://play.google.com/store/apps" target="_blank" class="download-btn">
+            <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png?hl=id" alt="Google Play" class="download-img">
+        </a>
+        <a href="https://apps.apple.com" target="_blank" class="download-btn">
+            <img src="https://firstpaloalto.com/wp-content/uploads/2020/02/apple-store-logo-png-1-transparent.png" alt="App Store" class="download-img">
+        </a>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

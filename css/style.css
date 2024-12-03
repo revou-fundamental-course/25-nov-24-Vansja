@@ -1,0 +1,448 @@
+/* Basic reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;  /* Mengatur teks agar rata tengah */
+    margin-top: 20px;     /* Memberikan jarak atas */
+    margin-bottom: 20px;  /* Memberikan jarak bawah */
+}
+
+
+.bmi-form {
+    margin: 20px auto;
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="number"], input[type="radio"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* Styling untuk tombol Hitung BMI dan Reset */
+button {
+    width: 100%; /* Lebar tombol penuh */
+    padding: 10px; /* Spasi di dalam tombol */
+    font-size: 16px; /* Ukuran teks */
+    cursor: pointer; /* Kursor menjadi pointer saat hover */
+    border: none; /* Menghilangkan border standar */
+    border-radius: 5px; /* Membuat sudut tombol tumpul */
+    transition: background-color 0.3s ease; /* Efek transisi saat hover */
+}
+
+/* Tombol Hitung BMI */
+button[type="button"]:first-of-type {
+    background-color: #007BFF; /* Warna biru untuk tombol Hitung BMI */
+    color: white; /* Warna teks putih */
+}
+
+button[type="button"]:first-of-type:hover {
+    background-color: #0056b3; /* Warna lebih gelap saat hover */
+}
+
+/* Tombol Reset */
+button[type="button"]:last-of-type {
+    background-color: #f44336; /* Warna merah untuk tombol Reset */
+    color: white; /* Warna teks putih */
+    margin-top: 10px; /* Memberikan jarak antara tombol Hitung dan Reset */
+}
+
+button[type="button"]:last-of-type:hover {
+    background-color: #d32f2f; /* Warna lebih gelap saat hover */
+}
+
+/* Tombol yang tidak bisa ditekan (disabled) */
+button:disabled {
+    background-color: #ccc; /* Warna latar belakang tombol yang dinonaktifkan */
+    color: #777; /* Warna teks lebih gelap */
+    cursor: not-allowed; /* Kursor berubah menjadi 'not-allowed' untuk menunjukkan tombol tidak bisa ditekan */
+    opacity: 0.5; /* Menambahkan transparansi untuk menunjukkan tombol tidak aktif */
+}
+
+
+
+/* Styling untuk gender radio button */
+/* Styling untuk gender radio button */
+.gender {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Styling untuk label yang mewakili tombol radio */
+.gender-label {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc; /* Bingkai tombol */
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.3s ease; /* Transisi border */
+}
+
+/* Logo gambar */
+.gender-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Hover effect */
+.gender-label:hover {
+    border-color: #888; /* Warna border saat hover */
+}
+
+/* Hover effect khusus untuk pria */
+#male:hover {
+    border-color: lightblue; /* Biru muda saat hover pada Pria */
+}
+
+/* Hover effect khusus untuk wanita */
+#female:hover {
+    border-color: pink; /* Pink saat hover pada Wanita */
+}
+
+/* Styling untuk tombol radio (menyembunyikan input asli) */
+input[type="radio"] {
+    position: absolute;
+    opacity: 0; /* Menyembunyikan tombol radio tapi tetap bisa diklik */
+    pointer-events: none; /* Mencegah interaksi langsung dengan input */
+}
+
+/* Warna border saat radio button dipilih */
+input[type="radio"]:checked + .gender-label {
+    border-color: #0056b3; /* Biru untuk Pria */
+  
+}
+
+input[type="radio"]:checked#male + .gender-label {
+    border-color: lightblue; /* Menjaga warna biru muda pada tombol Pria */
+   background-color: rgba(173, 216, 230, 0.5);
+}
+
+input[type="radio"]:checked#female + .gender-label {
+    border-color: pink; /* Menjaga warna pink pada tombol Wanita */
+  background-color: rgba(255, 182, 193, 0.5);
+}
+
+/* Styling lainnya */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px;  /* Memberi ruang untuk ikon di sisi kanan */
+    background-size: 20px 20px;  /* Ukuran ikon */
+    background-repeat: no-repeat;
+    background-position: right 15px center;  /* Memindahkan ikon ke sisi kanan */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;  /* Ukuran teks input */
+}
+
+/* Styling untuk input dengan ikon kalender */
+#age {
+    background-image: url('https://e7.pngegg.com/pngimages/772/398/png-clipart-computer-icons-calendar-survey-miscellaneous-text.png');
+}
+
+/* Styling untuk input dengan ikon penggaris */
+#height {
+    background-image: url('https://w7.pngwing.com/pngs/60/1023/png-transparent-computer-icons-tool-writing-tape-measures-ruler-angle-text-measurement.png');
+}
+
+/* Styling untuk input dengan ikon beban */
+#weight {
+    background-image: url('https://w7.pngwing.com/pngs/774/935/png-transparent-weight-computer-icons-kilogram-symbol-mass-symbol-miscellaneous-game-logo-thumbnail.png');
+}
+
+#resultBox {
+    display: block; /* Ubah sementara untuk melihat kotak */
+    margin-top: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Menggabungkan garis ganda menjadi satu */
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd; /* Warna garis */
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.bmi-diagram {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 50px;
+    margin: 20px auto;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Zona BMI dengan warna yang sesuai */
+.zones {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.zone {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Warna untuk setiap zona */
+.zone-kurus { background-color: lightblue; }
+.zone-normal { background-color: green; }
+.zone-gemuk { background-color: yellow; color: black; }
+.zone-obesitas { background-color: orange; }
+
+/* Jarum indikator */
+.needle {
+    position: absolute;
+    height: 100%;
+    width: 4px;
+    background-color: red;
+    transition: left 0.5s ease;
+    top: 0;
+}
+
+
+.tabs {
+  width: 100%;
+}
+
+.tab {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.tab-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tab-description {
+  display: none;
+  padding: 10px 0;
+  border-top: 1px solid #eee;
+}
+
+.tab-description p {
+  margin: 0;
+}
+
+
+.tab-description ol {
+  padding-left: 20px; /* Memberi jarak agar nomor tidak keluar */
+}
+
+.tab-description li {
+  list-style-position: inside; /* Memastikan nomor berada di dalam kotak */
+}
+
+.tab-description ul {
+  padding-left: 20px; /* Memberi jarak untuk sub-list */
+}
+
+.bmi-consultation {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin: 20px auto;
+    font-size: 16px;
+    text-align: center;
+    width: 60%; /* Membuat bingkai lebih kecil */
+    max-width: 600px; /* Batas lebar maksimal */
+}
+
+.consultation-buttons {
+    display: flex;
+    justify-content: center; /* Menyusun tombol sejajar di tengah */
+    gap: 20px; /* Jarak antar tombol */
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    flex: 1; /* Membuat tombol merata */
+    max-width: 250px; /* Membatasi lebar tombol */
+}
+
+#consultationBtn {
+    background-color: #2196F3; /* Biru untuk konsultasi */
+}
+
+#registrationBtn {
+    background-color: #ff9800; /* Orange untuk registrasi */
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.footer {
+    background-color: #000; /* Latar belakang hitam */
+    color: #fff; /* Teks putih */
+    text-align: center; /* Teks di tengah */
+    padding: 20px;
+    position: relative;
+}
+
+.footer {
+    background-color: #000; /* Latar belakang hitam */
+    color: #fff; /* Teks putih */
+    text-align: center; /* Teks di tengah */
+    padding: 20px;
+    position: relative;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.download-links {
+    margin-top: 15px;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: transparent; /* Menghilangkan background default */
+    border: none; /* Menghapus border */
+    padding: 10px;
+    cursor: pointer; /* Mengubah kursor menjadi tangan saat hover */
+    transition: transform 0.3s ease; /* Efek transisi saat hover */
+}
+
+.download-btn img {
+    width: 150px; /* Atur lebar gambar */
+    height: auto; /* Menjaga proporsi gambar */
+    display: block;
+    transition: transform 0.3s ease; /* Efek transisi gambar saat hover */
+}
+
+.download-btn:hover img {
+    transform: scale(1.1); /* Zoom gambar saat hover */
+}
+
+.download-btn:active img {
+    transform: scale(1); /* Kembali ke ukuran normal saat tombol ditekan */
+}
+
+@media (max-width: 600px) {
+    .bmi-form {
+        width: 100%; /* Mengisi seluruh lebar layar */
+        padding: 15px; /* Mengurangi padding untuk ruang yang lebih kecil */
+        box-shadow: none; /* Menghapus bayangan agar terlihat lebih bersih di layar kecil */
+    }
+
+    h1 {
+        font-size: 24px; /* Mengurangi ukuran font */
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-size: 14px; /* Ukuran font lebih kecil */
+    }
+
+    input[type="number"], input[type="radio"] {
+        padding: 6px; /* Mengurangi padding input */
+    }
+
+    button {
+        padding: 8px; /* Mengurangi padding tombol */
+        font-size: 14px; /* Ukuran font tombol lebih kecil */
+    }
+
+    .gender {
+        flex-direction: column; /* Mengubah posisi menjadi vertikal */
+        gap: 10px; /* Mengurangi jarak antar elemen */
+    }
+
+    .bmi-diagram {
+        max-width: 100%; /* Menyesuaikan dengan layar kecil */
+        height: 40px; /* Mengurangi tinggi diagram */
+    }
+
+    .bmi-consultation {
+        width: 90%; /* Menyesuaikan lebar dengan layar kecil */
+    }
+
+    .consultation-buttons {
+        flex-direction: column; /* Mengatur tombol secara vertikal */
+        gap: 10px; /* Memberikan jarak antar tombol */
+    }
+
+    .footer {
+        padding: 15px; /* Mengurangi padding pada footer */
+        font-size: 14px; /* Mengurangi ukuran font */
+    }
+
+    .download-btn img {
+        width: 120px; /* Mengurangi ukuran gambar untuk tombol unduh */
+    }
+}
+
+.highlighted-text {
+    font-size: 20px; /* Perbesar ukuran font */
+    line-height: 1.8; /* Menambahkan spasi antar baris */
+    color: #333; /* Mengatur warna teks */
+}
