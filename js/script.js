@@ -1,3 +1,4 @@
+//fungsi kalkulator
 function calculateBMI() {
     const age = Number(document.getElementById('age').value);
     const height = Number(document.getElementById('height').value);
@@ -15,12 +16,13 @@ function calculateBMI() {
     let explanation = '';
     let position = 0;
 
-    // Reset table before filling results
+    
     document.getElementById('resultKurus').textContent = '-';
     document.getElementById('resultNormal').textContent = '-';
     document.getElementById('resultGemuk').textContent = '-';
     document.getElementById('resultObesitas').textContent = '-';
 
+    //penjelasan
     if (bmi < 18.5) {
         category = 'Kurus';
         explanation = 'Anda berada di bawah berat badan normal. Disarankan untuk meningkatkan asupan kalori dan melakukan olahraga teratur.';
@@ -43,10 +45,10 @@ function calculateBMI() {
         document.getElementById('resultObesitas').textContent = '<';
     }
 
-    // Update needle position
+    // jalur jarum
     document.getElementById('needle').style.left = `${position}%`;
 
-    // Display results
+    // hasil
     document.getElementById('bmiValue').textContent = bmi;
     document.getElementById('status').textContent = category;
     document.getElementById('penjelasan-text').textContent = explanation;
@@ -55,6 +57,7 @@ function calculateBMI() {
     document.getElementById('penjelasanBMI').style.display = 'block';
 }
 
+//fungsi reset tombol
 function resetBMI() {
     document.getElementById('bmiForm').reset();
 
@@ -71,6 +74,7 @@ function resetBMI() {
     document.getElementById('resetButton').disabled = true;
 }
 
+//validasi data
 document.getElementById('bmiForm').addEventListener('input', function () {
     const age = document.getElementById('age').value;
     const height = document.getElementById('height').value;
@@ -87,11 +91,12 @@ document.getElementById('bmiForm').addEventListener('input', function () {
     }
 });
 
+// fungsi toogle
 function toggleDescription(tab) {
     const description = tab.querySelector('.tab-description');
     const sign = tab.querySelector('.toggle-sign');
 
-    // Close other tabs
+    // tutup tab
     const allDescriptions = document.querySelectorAll('.tab-description');
     allDescriptions.forEach(desc => {
         if (desc !== description) {
@@ -99,7 +104,7 @@ function toggleDescription(tab) {
         }
     });
 
-    // Toggle description visibility
+    // tab deskripsi
     if (description.style.display === 'none' || !description.style.display) {
         description.style.display = 'block';
         sign.textContent = '-';
@@ -110,14 +115,15 @@ function toggleDescription(tab) {
 }
 
 function validatePositiveInput(input) {
-    // Prevent negative values
+    // mengatasi angka mines
     if (input.value < 0) {
         input.value = 0; // Set to 0 if negative
     }
 }
 
-document.getElementById('downloadButton').addEventListener('click', function (e) {
+//pop up
+document.getElementById('downloadbutton').addEventListener('click', function (e) {
     setTimeout(function () {
         alert('File terunduh');
-    }, 500); // Short delay to ensure file download starts
+    }, 500); 
 });

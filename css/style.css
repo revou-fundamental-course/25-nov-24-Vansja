@@ -1,4 +1,4 @@
-/* Basic reset for margin and padding */
+
 * {
     margin: 0;
     padding: 0;
@@ -41,47 +41,44 @@ input[type="number"], input[type="radio"] {
 
 /* Styling untuk tombol Hitung BMI dan Reset */
 button {
-    width: 100%; /* Lebar tombol penuh */
-    padding: 10px; /* Spasi di dalam tombol */
-    font-size: 16px; /* Ukuran teks */
-    cursor: pointer; /* Kursor menjadi pointer saat hover */
-    border: none; /* Menghilangkan border standar */
-    border-radius: 5px; /* Membuat sudut tombol tumpul */
-    transition: background-color 0.3s ease; /* Efek transisi saat hover */
+    width: 100%; 
+    padding: 10px; 
+    font-size: 16px;
+    cursor: pointer; 
+    border: none; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease;
 }
 
 /* Tombol Hitung BMI */
 button[type="button"]:first-of-type {
-    background-color: #007BFF; /* Warna biru untuk tombol Hitung BMI */
-    color: white; /* Warna teks putih */
+    background-color: #007BFF; 
+    color: white;
 }
 
 button[type="button"]:first-of-type:hover {
-    background-color: #0056b3; /* Warna lebih gelap saat hover */
+    background-color: #0056b3; 
 }
 
 /* Tombol Reset */
 button[type="button"]:last-of-type {
-    background-color: #f44336; /* Warna merah untuk tombol Reset */
-    color: white; /* Warna teks putih */
-    margin-top: 10px; /* Memberikan jarak antara tombol Hitung dan Reset */
+    background-color: #f44336; 
+    color: white; 
+    margin-top: 10px; 
 }
 
 button[type="button"]:last-of-type:hover {
-    background-color: #d32f2f; /* Warna lebih gelap saat hover */
+    background-color: #d32f2f; 
 }
 
 /* Tombol yang tidak bisa ditekan (disabled) */
 button:disabled {
-    background-color: #ccc; /* Warna latar belakang tombol yang dinonaktifkan */
-    color: #777; /* Warna teks lebih gelap */
-    cursor: not-allowed; /* Kursor berubah menjadi 'not-allowed' untuk menunjukkan tombol tidak bisa ditekan */
-    opacity: 0.5; /* Menambahkan transparansi untuk menunjukkan tombol tidak aktif */
+    background-color: #ccc; 
+    color: #777; 
+    cursor: not-allowed; 
+    opacity: 0.5; 
 }
 
-
-
-/* Styling untuk gender radio button */
 /* Styling untuk gender radio button */
 .gender {
     display: flex;
@@ -94,11 +91,11 @@ button:disabled {
 .gender-label {
     display: flex;
     align-items: center;
-    border: 2px solid #ccc; /* Bingkai tombol */
+    border: 2px solid #ccc; 
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
-    transition: border-color 0.3s ease; /* Transisi border */
+    transition: border-color 0.3s ease;
 }
 
 /* Logo gambar */
@@ -110,12 +107,12 @@ button:disabled {
 
 /* Hover effect */
 .gender-label:hover {
-    border-color: #888; /* Warna border saat hover */
+    border-color: #888; 
 }
 
 /* Hover effect khusus untuk pria */
 #male:hover {
-    border-color: lightblue; /* Biru muda saat hover pada Pria */
+    border-color: lightblue; 
 }
 
 /* Hover effect khusus untuk wanita */
@@ -126,23 +123,23 @@ button:disabled {
 /* Styling untuk tombol radio (menyembunyikan input asli) */
 input[type="radio"] {
     position: absolute;
-    opacity: 0; /* Menyembunyikan tombol radio tapi tetap bisa diklik */
-    pointer-events: none; /* Mencegah interaksi langsung dengan input */
+    opacity: 0; 
+    pointer-events: none; 
 }
 
 /* Warna border saat radio button dipilih */
 input[type="radio"]:checked + .gender-label {
-    border-color: #0056b3; /* Biru untuk Pria */
+    border-color: #0056b3; 
   
 }
 
 input[type="radio"]:checked#male + .gender-label {
-    border-color: lightblue; /* Menjaga warna biru muda pada tombol Pria */
+    border-color: lightblue; 
    background-color: rgba(173, 216, 230, 0.5);
 }
 
 input[type="radio"]:checked#female + .gender-label {
-    border-color: pink; /* Menjaga warna pink pada tombol Wanita */
+    border-color: pink;
   background-color: rgba(255, 182, 193, 0.5);
 }
 
@@ -155,13 +152,13 @@ body {
 .form-input {
     width: 100%;
     padding: 10px;
-    padding-right: 40px;  /* Memberi ruang untuk ikon di sisi kanan */
-    background-size: 20px 20px;  /* Ukuran ikon */
+    padding-right: 40px; 
+    background-size: 20px 20px; 
     background-repeat: no-repeat;
-    background-position: right 15px center;  /* Memindahkan ikon ke sisi kanan */
+    background-position: right 15px center;  
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;  /* Ukuran teks input */
+    font-size: 16px;  
 }
 
 /* Styling untuk input dengan ikon kalender */
@@ -207,6 +204,7 @@ th {
     background-color: #f4f4f4;
 }
 
+/*Diagram*/
 .bmi-diagram {
     position: relative;
     width: 100%;
@@ -293,6 +291,7 @@ th {
   padding-left: 20px; /* Memberi jarak untuk sub-list */
 }
 
+/*Konsultasi*/
 .bmi-consultation {
     background-color: #f0f0f0;
     padding: 20px;
@@ -301,8 +300,8 @@ th {
     margin: 20px auto;
     font-size: 16px;
     text-align: center;
-    width: 60%; /* Membuat bingkai lebih kecil */
-    max-width: 600px; /* Batas lebar maksimal */
+    width: 60%; 
+    max-width: 600px; 
 }
 
 .consultation-buttons {
@@ -326,11 +325,11 @@ th {
     max-width: 250px; /* Membatasi lebar tombol */
 }
 
-#consultationBtn {
+#consultationbtn {
     background-color: #2196F3; /* Biru untuk konsultasi */
 }
 
-#registrationBtn {
+#registrationbtn {
     background-color: #ff9800; /* Orange untuk registrasi */
 }
 
@@ -364,18 +363,18 @@ th {
 
 .download-btn {
     display: inline-block;
-    background-color: transparent; /* Menghilangkan background default */
-    border: none; /* Menghapus border */
+    background-color: transparent; 
+    border: none; 
     padding: 10px;
-    cursor: pointer; /* Mengubah kursor menjadi tangan saat hover */
-    transition: transform 0.3s ease; /* Efek transisi saat hover */
+    cursor: pointer; 
+    transition: transform 0.3s ease;
 }
 
 .download-btn img {
-    width: 150px; /* Atur lebar gambar */
-    height: auto; /* Menjaga proporsi gambar */
+    width: 150px;
+    height: auto; 
     display: block;
-    transition: transform 0.3s ease; /* Efek transisi gambar saat hover */
+    transition: transform 0.3s ease; 
 }
 
 .download-btn:hover img {
@@ -386,6 +385,8 @@ th {
     transform: scale(1); /* Kembali ke ukuran normal saat tombol ditekan */
 }
 
+
+/*responsive*/
 @media (max-width: 600px) {
     .bmi-form {
         width: 100%; /* Mengisi seluruh lebar layar */

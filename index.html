@@ -9,11 +9,13 @@
 <body>
 
 
-
+<!--Judul-->
 <h1>Kalkulator BMI</h1>
 <p class="highlighted-text">
     Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di kalkulator BMI.
 </p>
+
+<!---Data user-->
 <div class="bmi-form">
     <form id="bmiForm">
         <div class="gender">
@@ -43,8 +45,6 @@
         <button type="button" id="calculateButton" onclick="calculateBMI()" disabled>Hitung BMI</button>
 <button type="button" id="resetButton" onclick="resetBMI()" disabled>Reset</button>
     </form>
-
-    <div id="result"></div>
 </div>
 
 <!-- Kotak Hasil -->
@@ -87,6 +87,7 @@
     </tr>
 </table>
   <br>
+  <!--- Diagram-->
   <div class="bmi-diagram">
     <div class="needle" id="needle"></div>
     <div class="zones">
@@ -97,7 +98,8 @@
     </div>
 </div>
   
-<a href="bmi-guide.pdf" download="Panduan_BMI.pdf" id="downloadButton">
+<!--tombol download-->
+<a download="Panduan_BMI.pdf" id="downloadbutton">
   <button type="button">Download PDF</button>
 </a>
 
@@ -106,7 +108,7 @@
 </div>
   
   <br>
-  
+  <!--tabs desskripsi-->
   <div class="tabs">
   <div class="tab" onclick="toggleDescription(this)">
     <div class="tab-header">
@@ -199,19 +201,21 @@
 </div>
   <br>
   
+  <!---konsultasi-->
   <div class="bmi-consultation">
     <p>BMI tidak sepenuhnya mewakili diagnosis menyeluruh dari kesehatan tubuh dan resiko penyakit seseorang. Anda perlu konsultasi lebih lanjut mengenai resiko dan kekhawatiran Anda terkait dengan berat badan Anda.</p>
     <div class="consultation-buttons">
-        <button class="btn" id="consultationBtn">Konsultasi Gizi via Aplikasi</button>
-        <button class="btn" id="registrationBtn">Registrasi Ahli Gizi</button>
+        <button class="btn" id="consultationbtn">Konsultasi Gizi via Aplikasi</button>
+        <button class="btn" id="registrationbtn">Registrasi Ahli Gizi</button>
     </div>
 </div>
 
   
   <br>
-
+    <!--footer-->
   <footer class="footer">
     <p>RevoU Fundamental Course - Made by Vanness Jason</p>
+   <!--link download-->
     <div class="download-links">
         <a href="https://play.google.com/store/apps" target="_blank" class="download-btn">
             <img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png?hl=id" alt="Google Play" class="download-img">
