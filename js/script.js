@@ -16,39 +16,39 @@ function calculateBMI() {
     let explanation = '';
     let position = 0;
 
-    
-    document.getElementById('resultKurus').textContent = '-';
-    document.getElementById('resultNormal').textContent = '-';
-    document.getElementById('resultGemuk').textContent = '-';
-    document.getElementById('resultObesitas').textContent = '-';
+    // Reset hasil
+    document.getElementById('resultkurus').textContent = '-';
+    document.getElementById('resultnormal').textContent = '-';
+    document.getElementById('resultgemuk').textContent = '-';
+    document.getElementById('resultobesitas').textContent = '-';
 
-    //penjelasan
+    // Penentuan kategori BMI
     if (bmi < 18.5) {
         category = 'Kurus';
         explanation = 'Anda berada di bawah berat badan normal. Disarankan untuk meningkatkan asupan kalori dan melakukan olahraga teratur.';
         position = 10;
-        document.getElementById('resultKurus').textContent = '<';
+        document.getElementById('resultkurus').textContent = '<';
     } else if (bmi >= 18.5 && bmi < 24.9) {
         category = 'Normal';
         explanation = 'Anda memiliki berat badan normal. Pertahankan gaya hidup sehat dan olahraga teratur.';
         position = 35;
-        document.getElementById('resultNormal').textContent = '<';
+        document.getElementById('resultnormal').textContent = '<';
     } else if (bmi >= 25 && bmi < 29.9) {
         category = 'Gemuk';
         explanation = 'Anda berada di atas berat badan normal. Disarankan untuk mengatur pola makan dan meningkatkan aktivitas fisik.';
         position = 65;
-        document.getElementById('resultGemuk').textContent = '<';
+        document.getElementById('resultgemuk').textContent = '<';
     } else {
         category = 'Obesitas';
         explanation = 'Anda berada dalam kategori obesitas. Konsultasikan dengan dokter atau ahli gizi untuk program penurunan berat badan.';
         position = 90;
-        document.getElementById('resultObesitas').textContent = '<';
+        document.getElementById('resultobesitas').textContent = '<';
     }
 
-    // jalur jarum
+    // Memperbarui jarum indikator
     document.getElementById('needle').style.left = `${position}%`;
 
-    // hasil
+    // Menampilkan hasil
     document.getElementById('bmiValue').textContent = bmi;
     document.getElementById('status').textContent = category;
     document.getElementById('penjelasan-text').textContent = explanation;
@@ -57,9 +57,10 @@ function calculateBMI() {
     document.getElementById('penjelasanBMI').style.display = 'block';
 }
 
+
 //fungsi reset tombol
 function resetBMI() {
-    document.getElementById('bmiForm').reset();
+    document.getElementById('bmiform').reset();
 
     document.getElementById('resultBox').style.display = 'none';
     document.getElementById('penjelasanBMI').style.display = 'none';
@@ -70,17 +71,17 @@ function resetBMI() {
     document.getElementById('status').textContent = '-';
     document.getElementById('penjelasan-text').textContent = '';
 
-    document.getElementById('calculateButton').disabled = true;
-    document.getElementById('resetButton').disabled = true;
+    document.getElementById('calculatebutton').disabled = true;
+    document.getElementById('resetbutton').disabled = true;
 }
 
 //validasi data
-document.getElementById('bmiForm').addEventListener('input', function () {
+document.getElementById('bmiform').addEventListener('input', function () {
     const age = document.getElementById('age').value;
     const height = document.getElementById('height').value;
     const weight = document.getElementById('weight').value;
-    const calculateButton = document.getElementById('calculateButton');
-    const resetButton = document.getElementById('resetButton');
+    const calculateButton = document.getElementById('calculatebutton');
+    const resetButton = document.getElementById('resetbutton');
 
     if (age && height && weight) {
         calculateButton.disabled = false;
@@ -90,6 +91,7 @@ document.getElementById('bmiForm').addEventListener('input', function () {
         resetButton.disabled = true;
     }
 });
+
 
 // fungsi toogle
 function toggleDescription(tab) {

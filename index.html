@@ -17,7 +17,7 @@
 
 <!---Data user-->
 <div class="bmi-form">
-    <form id="bmiForm">
+    <form id="bmiform">
         <div class="gender">
             <input type="radio" name="gender" id="male" value="male">
             <label for="male" class="gender-label" id="male">
@@ -42,8 +42,9 @@
 
 
         
-        <button type="button" id="calculateButton" onclick="calculateBMI()" disabled>Hitung BMI</button>
-<button type="button" id="resetButton" onclick="resetBMI()" disabled>Reset</button>
+<button type="button" id="calculatebutton" onclick="calculateBMI()" disabled>Hitung BMI</button>
+<button type="button" id="resetbutton" onclick="resetBMI()" disabled>Reset</button>
+
     </form>
 </div>
 
@@ -59,7 +60,8 @@
 </div>
   <br>
     <h4>Status BMI</h4>
-    <table>
+    <h4>Status BMI</h4>
+<table>
     <tr>
         <th>Status</th>
         <th>Angka BMI</th>
@@ -68,24 +70,25 @@
     <tr>
         <td>Kurus</td>
         <td>16-18.4</td>
-        <td id="resultKurus">-</td>
+        <td id="resultkurus">-</td>
     </tr>
     <tr>
         <td>Normal</td>
         <td>18.5-24.9</td>
-        <td id="resultNormal">-</td>
+        <td id="resultnormal">-</td>
     </tr>
     <tr>
         <td>Gemuk</td>
         <td>25-29.9</td>
-        <td id="resultGemuk">-</td>
+        <td id="resultgemuk">-</td>
     </tr>
     <tr>
         <td>Obesitas</td>
         <td>30+</td>
-        <td id="resultObesitas">-</td>
+        <td id="resultobesitas">-</td>
     </tr>
 </table>
+
   <br>
   <!--- Diagram-->
   <div class="bmi-diagram">
